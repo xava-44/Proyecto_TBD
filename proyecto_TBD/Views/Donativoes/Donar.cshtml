@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["title"] = "Donar";
+}
+
+<div class="modal-body" id="modal-donacion">
+    <form id="donacionForm" asp-controller="Donativoes" asp-action="Create" method="post">
+
+
+        <div class="mb-3">
+            <label for="producto" class="form-label">Producto a Donar</label>
+
+            <select asp-items="ViewBag.Productos" class="form-select" name="IdProducto">
+                <option selected disabled>Selecciona un producto...</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="cantidad" class="form-label">Cantidad</label>
+            <input type="number" class="form-control" id="cantidad" name="Cantidad" placeholder="Ej. 4" min="1" required>
+        </div>
+        <div class="mb-3">
+            <label for="Descripcion" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" id="descripcion" name="Descripcion" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="institucion" class="form-label">Institución</label>
+            <select asp-items="ViewBag.Instituciones" class="form-select" name="IdInstituto" id="institucion" required>
+                <option selected disabled value="">Selecciona una institución...</option>
+
+            </select>
+        </div>
+
+        <div class="d-flex justify-content-end gap-2">
+           
+            <button type="button" class="btn btn-secondary"
+                    onclick="window.location.href='@Url.Action("Principal", "Home")'">
+                Cancelar
+            </button>
+            <button type="submit" class="btn btn-primary">Continuar</button>
+        </div>
+
+    </form>
+
+   
+</div>
+

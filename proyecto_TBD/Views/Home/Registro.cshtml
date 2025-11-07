@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["title"] = "Registro";
+}
+
+<div class="form">
+
+    @* <ul class="tab-group">
+        <li class="tab active"><a href="#signup">Sign Up</a></li>
+        <li class="tab"><a href="#login">Log In</a></li>
+    </ul> *@
+
+    <div class="tab-content">
+        <div id="signup">
+            <h1>Registro</h1>
+
+            <form asp-controller="Usuarios" asp-action="Create"  method="post">
+                    <div class="field-wrap">
+                        <label>
+                            Nombre <span class="req">*</span>
+                        </label>
+                        <input type="text"  name="Nombre"required autocomplete="off" />
+                    </div>
+          
+                <div class="field-wrap">
+                    <label>
+                        Correo Electronico<span class="req">*</span>
+                    </label>
+                    <input type="email" name="Correo" required autocomplete="off" />
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Telefono<span class="req">*</span>
+                    </label>
+                    <input type="number"name="Telefono" required autocomplete="off" />
+                </div>
+                <div class="field-wrap">
+                    <label>
+                        Empresa<span class="req">*</span>
+                    </label>
+                    <input type="text" name="NombreEmpresa" required autocomplete="off" />
+                </div>
+
+                <button type="submit" class="button button-block" >Aceptar </button>
+               
+            </form>
+
+        </div>
+
+
+        </div>
+
+    </div><!-- tab-content -->
+

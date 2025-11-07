@@ -1,0 +1,45 @@
+﻿@model IEnumerable<proyecto_TBD.Models.Donativo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista</h1> <h3>Total donado: @ViewData["TotalKilos"] kg</h3>
+
+<p>
+    <a  asp-controller="Home" asp-action="Principal">Salir</a>
+</p>
+<table class="table">
+    <thead>
+        
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Fecha)</th>
+            <th>@Html.DisplayNameFor(model => model.Cantidad)</th>
+            <th>@Html.DisplayNameFor(model => model.Descripcion)</th>
+            <th>Institución</th>
+            <th>Producto</th>
+        
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+           
+                <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
+                <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
+                <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
+                <td>@Html.DisplayFor(modelItem => item.IdInstitutoNavigation.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.IdProductoNavigation.Nombre)</td>
+           
+                <td>
+                    @* <a asp-action="Edit" asp-route-id="@item.Iddonativos">Edit</a> | *@
+                    <a asp-action="Details" asp-route-id="@item.Iddonativos">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Iddonativos">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

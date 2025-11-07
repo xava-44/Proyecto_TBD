@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["title"] = "menu";
+}
+
+
+ <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="https://www.ensenada.tecnm.mx/" target="_blank">proyecto_TBD</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Principal">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller= "Productoes" asp-action="Index">Productos</a>
+                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Instituciones" asp-action="Index">Instituciones</a>
+                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Donativoes" asp-action="Index">Mis donativos </a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" target="_top" asp-area="" asp-controller="Home" asp-action="Login">Salir</a>
+                    </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header> 
+    <body>
+    <div class="hero-section">
+       @* <div class="hero-overlay"></div> *@
+        <div class="hero-content">
+            <h1 class="hero-title">Bienvenido a Nuestra Fundación</h1>
+            <a asp-controller="Donativoes" asp-action="Crear" class="hero-button">
+                Donar Ahora
+            </a>
+        </div>
+    </div>
+
+
+    </body>
